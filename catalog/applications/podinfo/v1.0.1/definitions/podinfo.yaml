@@ -1,0 +1,24 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: podinfo
+  namespace: vela-system
+  annotations:
+    version: v1.0.0
+    description: "Podinfo application"
+spec:
+  components:
+    - name: podinfo
+      type: helm
+      properties:
+        repoType: helm
+        chart: podinfo
+        url: https://stefanprodan.github.io/podinfo
+        version: "6.0.0"
+        values:
+          ui:
+            color: "#D31F16"
+            message: "Welcome !"
+          replicaCount: 1
+          ingress:
+            enabled: true

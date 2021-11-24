@@ -1,0 +1,32 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: my-wordpress
+  namespace: vela-system
+  annotations:
+    version: v1.0.0
+    description: "Customized version of wordpress-mysql"
+spec:
+  components:
+    - name: mysql-db
+      type: mysql
+      properties:
+        image: mysql:5.7
+      scopes:
+        healthscopes.core.oam.dev: wp-health-check
+    - name: wordpress-site
+      type: wordpress
+      properties:
+        image: bitnami/wordpress:5.8.1
+        port: 8080     
+      scopes:
+        healthscopes.core.oam.dev: wp-health-check           
+      traits:
+        - type: ingress
+          properties:
+            domain: "localhost"
+            http: 
+              "/": 8080
+        - type: scaler
+          properties:
+            replicas: 1

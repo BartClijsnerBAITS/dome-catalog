@@ -4,7 +4,7 @@ metadata:
   name: my-wordpress
   namespace: vela-system
   annotations:
-    version: v1.0.0
+    version: v1.2.3
     description: "Customized version of wordpress-mysql"
 spec:
   components:
@@ -18,14 +18,14 @@ spec:
       type: wordpress
       properties:
         image: bitnami/wordpress:5.8.1
-        port: 8080     
+        port: 8080
       scopes:
-        healthscopes.core.oam.dev: wp-health-check           
+        healthscopes.core.oam.dev: wp-health-check
       traits:
         - type: ingress
           properties:
             domain: "localhost"
-            http: 
+            http:
               "/": 8080
         - type: scaler
           properties:

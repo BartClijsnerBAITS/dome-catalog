@@ -1,7 +1,7 @@
 apiVersion: core.dome.dev/v1alpha1
 kind: ApplicationMetadata
-name: "Wordpress"
-version: 5.8.1
+name: "wordpress-mysql"
+version: 1.2.3
 description: Open Source content management with Mysql database
 labels:
   - "wordpress"
@@ -17,4 +17,3 @@ maintainer:
 dependencies:
  - mysql: ../../../capabilities/mysql
  - wordpress: ../../../capabilities/wordpress
-

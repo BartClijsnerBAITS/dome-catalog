@@ -4,7 +4,7 @@ metadata:
   name: podinfo
   namespace: vela-system
   annotations:
-    version: v1.0.0
+    version: v1.0.1
     description: "Podinfo application"
 spec:
   components:

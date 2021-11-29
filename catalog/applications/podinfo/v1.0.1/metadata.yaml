@@ -1,7 +1,7 @@
 apiVersion: core.dome.dev/v1alpha1
 kind: ApplicationMetadata
-name: "Podinfo"
-version: 6.0.3
+name: "podinfo"
+version: 1.0.1
 description: Podinfo is a tiny web application made with Go that showcases best practices of running microservices in Kubernetes.
 labels:
   - "podinfo"
@@ -11,4 +11,3 @@ maintainer:
   - "@xxx"
 dependencies:
 - helm: ../../../capabilities/helm
-

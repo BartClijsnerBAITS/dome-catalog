@@ -1,7 +1,7 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: my-wordpress
+  name: wordpress-mysql
   namespace: vela-system
   annotations:
     version: v1.2.3
